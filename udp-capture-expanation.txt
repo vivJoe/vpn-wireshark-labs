@@ -1,0 +1,28 @@
+UDP Packet Capture Explanation (Wireshark + VPN)
+
+This file contains a brief explanation of the UDP packet capture performed during a VPN session using ProtonVPN (WireGuard protocol).
+
+What was done:
+1. A VPN connection was established using ProtonVPN with the WireGuard protocol.
+2. Wireshark was used to monitor network traffic.
+3. A filter was applied to view only UDP packets using the filter expression:
+4. Screenshots were taken during the VPN session, and packets were analyzed.
+
+What was observed:
+- The VPN client communicated with a remote IP address (e.g., 37.19.221.196) using **UDP port 51820** — the default port used by WireGuard.
+- Wireshark showed packets such as:
+- Handshake Initiation
+- Transport Data
+- Keep alive Messages
+
+These are part of the encrypted VPN tunnel, showing how secure communication occurs between the client and the VPN gateway.
+
+Why UDP?
+WireGuard and many VPNs use UDP because:
+- It's faster than TCP (no handshakes or retransmissions).
+- It's better for real-time communication like video, VoIP, and VPN tunnels.
+- It allows custom handling of packet loss or encryption.
+
+Summary:
+This UDP capture demonstrates how VPNs transmit encrypted traffic using UDP. The packets captured prove that the VPN was actively exchanging data with its gateway using the WireGuard protocol.
+
